@@ -1,0 +1,156 @@
+@import "App.css";
+
+.dynamicRight {
+    right: 0;
+    width: 65%;
+    overflow-y:auto;
+}
+
+.container {
+    margin: 2em;
+}
+
+.expblock{
+    border: 1px solid var(--dark-blue);
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    margin-bottom: 2em;
+}
+
+.expblock-container{
+    margin: 0.5em 0.1em;
+}
+
+.expblock h3 {
+    margin: 0;
+}
+
+.experience {
+    color: var(--dark-blue);
+}
+
+.projects {
+    color: var(--light-blue);
+}
+
+.expblock p {
+    margin: 0;
+}
+
+.expblock .description{
+    margin-top: 1.5em;
+}
+ul {
+    margin: 0;
+    margin-top: 1em;
+}
+
+.proj-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projblock {
+    flex: 0 0 33.3333%;
+    position: relative;
+}
+
+.projblock-front{
+    background-color: var(--light-light-blue);
+    margin: 1em;
+    margin-left: 0;
+    padding: 1em;
+    border-radius: 1em;
+    z-index: 100;
+}
+
+.projblock-front:hover{
+    opacity:0.7;
+}
+
+.projblock-front img {
+    width: 100%;
+}
+
+.projblock-front p{
+    margin:0;
+}
+
+.projblock-back{
+    background-color: var(--white);
+    position: relative;
+    padding: 1em;
+    display: flex;
+}
+
+.projblock-back p {
+    font-size: 0.7em;
+}
+
+.projblock-side { 
+    width: calc(100% * 0.45);
+    padding-left: 1em;
+}
+.projblock-side .main-img {
+    float: right; 
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.projblock-side a {
+    color: var(--link-blue);
+}
+
+.projblock-side .link-img {
+    width: 5%;
+    margin-right: 0.4em;
+    vertical-align:middle;
+    display:inline-block;
+}
+.projblock-side p{
+    vertical-align:middle;
+    display:inline-block;
+    margin: 0;
+}
+
+.projblock-content {
+    width: calc(100% * 0.55);
+}
+
+.projblock-content p {
+    margin: 0.1em;
+}
+
+.projblock-content .desc {
+    margin-top: 2em;
+    font-size: 0.7em;
+}
+
+.projblock-content h3 {
+    font-family: 'Playfair Display SC', serif;
+    color: var(--light-blue);
+    margin-bottom: 0;
+}
+
+.projblock .projblock-unflipped{
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+    transform: rotateY(-180deg);
+}
+
+.projblock .projblock-flipped{
+    z-index: 130;
+    opacity: 1;
+    top: 30%;
+    left: 30%;
+    margin:auto auto;
+    transform-style: preserve-3d;
+    transition: .5s linear;
+    position: fixed;
+    -webkit-transform : rotateY(0deg) scale(1.5); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform     : rotateY(0deg) scale(1.5); /* IE 9 */
+    transform         : rotateY(0deg) scale(1.5); /* Firefox 16+, IE 10+, Opera */
+    width: 40%;
+    height: 40%;
+}

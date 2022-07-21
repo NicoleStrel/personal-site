@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Raleway&display=swap');
+:root {
+    --dark-blue: #284d78;
+    --light-blue: #91b0d6;
+    --light-light-blue: #bccee2;
+    --white: #ffffff;
+    --grey-white: #d8d8d8;
+    --black: #000000;
+    --link-blue: #1F78D1;
+}
+  
+
+.App {
+    font-family: 'Raleway', sans-serif;
+}
+
+.App h1 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+.App a:hover {
+    opacity:0.6;
+}
+
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.centered-content {
+    margin: auto;
+    width: 60%;
+    align-items: center;
+    text-align: center;
+}
+
+.centered-container{
+    width: 100%;
+    margin: 3em auto;
+}
+
+.inline h1{
+    display:inline;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration:none;
+    color: var(--black);
+}
+
+

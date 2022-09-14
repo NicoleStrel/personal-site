@@ -8,7 +8,7 @@ import SocialLinks from './SocialLinks';
 
 class StaticLeft extends React.Component {
 
-    skills = ['Python', 'C', 'Javascript', 'Django', 'React', 'PostgresSQL', 'NodeJS', 'Vue', 'Tensorflow/Pytorch', 'Matlab']
+    skills = ['Python', 'C', 'Javascript', 'Django', 'React', 'Tensorflow/Pytorch', 'PostgresSQL', 'NodeJS', 'Vue','Matlab']
 
     render() {
         return (
@@ -20,7 +20,7 @@ class StaticLeft extends React.Component {
                             <h1 className="nicole">Nicole</h1>
                             <h1 className="streltsov">Streltsov</h1>
                         </div>
-                        <p>Software Engineer</p>
+                        <p className="software-eng">Software Engineer</p>
                         <SocialLinks/>
                         <div className="school">
                             <a href="https://www.utoronto.ca/" target="_blank"><img className="uoft-logo" src={utoronto} alt="uoft-logo"></img></a>
@@ -29,7 +29,7 @@ class StaticLeft extends React.Component {
                     </div>
                     <div className="skills">
                             {this.skills.map(function(skill, i){
-                                    return <Tab key={i} content={skill}></Tab>
+                                    return <Tab key={i} content={skill} delay={i/3}></Tab>
                                 })
                             }
                     </div>

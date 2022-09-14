@@ -29,7 +29,6 @@
 }
 
 .school p {
-    font-size: 0.8em;
     height: 100%;
 }
 
@@ -43,7 +42,6 @@
 
 .skills {
     margin: 4em auto;
-    font-size: 0.8em;
     display: flex;  
     justify-content: center;
     flex-wrap: wrap;
@@ -56,6 +54,13 @@
     display: inline;
     padding: 0.5em 1em;
     margin: 0.2em 0.6em;
+    -webkit-animation: load 0.5s linear;
+    animation: load 0.5s linear;
+    opacity:0;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both;
+    font-size: 0.8em;
+ 
 }
 
 .social-links img {
@@ -66,4 +71,36 @@
 
 .social-links .devpost, .envelope{
     width: 5.5%;  
+}
+
+.software-eng{
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+/* ----- media queries -----------*/
+@media only screen and (max-width: 1150px){
+    .tab {
+        font-size: 0.7em;
+    }
+    .school p {
+        margin-left: 0.25em;
+    }
+    .skills {
+        margin-top: 1.9em;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .staticLeft {
+        width: 100%;
+    }
+    .school p {
+       font-size: 0.9em;
+       margin-left: 0.5em;
+    }
+    .skills {
+        margin: 2em 3em;
+        margin-top: 3em;
+    }
 }

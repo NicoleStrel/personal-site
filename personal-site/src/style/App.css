@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Raleway&display=swap');
 :root {
+    /*colors*/
     --dark-blue: #284d78;
     --light-blue: #91b0d6;
     --light-light-blue: #bccee2;
@@ -7,11 +8,23 @@
     --grey-white: #d8d8d8;
     --black: #000000;
     --link-blue: #1F78D1;
+    --light-grey: #8f8e8e;
+}
+
+@keyframes load {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes load {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
   
 
 .App {
     font-family: 'Raleway', sans-serif;
+    background-color: var(--dark-blue);
 }
 
 .App h1 {
@@ -35,6 +48,9 @@
     width: 60%;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .centered-container{
@@ -42,8 +58,9 @@
     margin: 3em auto;
 }
 
-.inline h1{
-    display:inline;
+.inline {
+    display: inline-flex;
+    text-align: center;
 }
 
 .img {
@@ -55,5 +72,38 @@ a {
     text-decoration:none;
     color: var(--black);
 }
+/* ----- media queries -----------*/
+@media only screen and (max-width: 1150px){
+    li,p {
+        font-size: 0.75em;
+    }
+    h1 {
+        font-size: 1.75em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    .projblock-content .desc {
+        font-size: 0.1em;
+    }
+}
 
+@media only screen and (max-width: 900px){
+    h1 {
+        font-size: 1.6em;
+    }
+}
 
+@media only screen and (max-width: 767px){
+    .App{
+        display: inline-flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .split {
+        position: relative;
+    }
+    .inline h1 {
+        font-size: 2em;
+    }
+}

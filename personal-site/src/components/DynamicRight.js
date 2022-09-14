@@ -57,46 +57,46 @@ class DynamicRight extends React.Component {
         this.parseCSV(expcsv, "exp");
         this.parseCSV(projcsv, "proj");
     }
-    getProjBlock(i, dataItem){
-        return  (<ProjBlock 
-                    key={i} 
-                    title={dataItem.title} 
-                    subheader={dataItem.subheader} 
-                    date={dataItem.date} 
-                    img={dataItem.img} 
-                    desc={dataItem.desc}
-                    flipped={this.state.flipped}
-                    onFlip={this.flipCard}
-                    ></ProjBlock>)
-    }
     
     render() {
-        const flipped = this.state.flipped
         return (
             <div className="split dynamicRight"> 
                 <div className="container">
                     <h1 className="experience">Experience</h1>
                     {this.state.dataExp.map(function(dataItem, i){
-                        return <ExpBlock key={i} title={dataItem.title} company={dataItem.company} link={dataItem.link}  dates={dataItem.dates} description={dataItem.description}></ExpBlock>
+                        return <ExpBlock 
+                                    key={i} 
+                                    title={dataItem.title} 
+                                    company={dataItem.company} 
+                                    link={dataItem.link}  
+                                    dates={dataItem.dates} 
+                                    description={dataItem.description} 
+                                    delay={i/2}></ExpBlock>
                     })}
-                    <h1 className="projects">Projects</h1>
-                    <div className="proj-container">
-                        {this.state.dataProj.map((dataItem, i) =>
-                            <ProjBlock 
-                                key={i} 
-                                i={i}
-                                title={dataItem.title} 
-                                subheader={dataItem.subheader} 
-                                date={dataItem.date} 
-                                img={dataItem.img}
-                                github={dataItem.github}
-                                link={dataItem.link}
-                                desc={dataItem.desc}
-                                flipped={this.state.flipped[i]}
-                                onFlip={this.flipCard}
-                            ></ProjBlock>
-                        )}
+                    <div className="projects">
+                        <h1 className="proj-text">Projects</h1>
+                        <div className="proj-container">
+                            {this.state.dataProj.map((dataItem, i) =>
+                                <ProjBlock 
+                                    key={i} 
+                                    i={i}
+                                    title={dataItem.title} 
+                                    subheader={dataItem.subheader} 
+                                    date={dataItem.date} 
+                                    img={dataItem.img}
+                                    desc={dataItem.desc}
+                                    github={dataItem.github}
+                                    link={dataItem.link}
+                                    youtube={dataItem.youtube}
+                                    devpost={dataItem.devpost}
+                                    flipped={this.state.flipped[i]}
+                                    onFlip={this.flipCard}
+                                    delay={i/2}
+                                ></ProjBlock>
+                            )}
+                        </div>
                     </div>
+                    <p className="copyright"> © 2022 Copyright Nicole Streltsov</p>
                 </div>
             </div>
             

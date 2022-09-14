@@ -1,5 +1,26 @@
 @import "App.css";
 
+@keyframes slide {
+    0% {margin-left: 60em;}
+    100% {margin-left: 0;}
+}
+
+@-webkit-keyframes slide {
+    0% {margin-left: 60em;}
+    100% {margin-left: 0;}
+}
+
+@keyframes no-slide {
+    0% {margin-left: 0;}
+    100% {margin-left: 0;}
+}
+
+@-webkit-keyframes no-slide {
+    0% {margin-left: 0;}
+    100% {margin-left: 0;}
+}
+
+
 .dynamicRight {
     right: 0;
     width: 65%;
@@ -15,6 +36,10 @@
     border-radius: 1em;
     padding: 0.5em 1em;
     margin-bottom: 2em;
+    width: 94.5%;
+    margin-left: 60em;
+    -webkit-animation: slide 1.5s forwards;
+    animation: slide 1.5s forwards;
 }
 
 .expblock-container{
@@ -29,7 +54,12 @@
     color: var(--dark-blue);
 }
 
-.projects {
+.projects{
+    -webkit-animation: load 2s linear;
+    animation: load 2s linear;
+}
+
+.proj-text {
     color: var(--light-blue);
 }
 
@@ -48,20 +78,27 @@ ul {
 .proj-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
 }
 
 .projblock {
-    flex: 0 0 33.3333%;
+    flex: 0 0 32%;
     position: relative;
 }
 
+.projblock h3{
+    margin-bottom: 0;
+}
+
 .projblock-front{
-    background-color: var(--light-light-blue);
-    margin: 1em;
     margin-left: 0;
-    padding: 1em;
-    border-radius: 1em;
     z-index: 100;
+    box-shadow: 0 3px 8px 0 var(--light-light-blue), 0 4px 10px 0 var(--light-light-blue);
+    height: 100%;
+}
+
+.projblock-text{
+    margin: 1em;
 }
 
 .projblock-front:hover{
@@ -84,7 +121,7 @@ ul {
 }
 
 .projblock-back p {
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 
 .projblock-side { 
@@ -98,6 +135,7 @@ ul {
 }
 
 .projblock-side a {
+    display: block;
     color: var(--link-blue);
 }
 
@@ -143,7 +181,7 @@ ul {
     z-index: 130;
     opacity: 1;
     top: 30%;
-    left: 30%;
+    left: 21%;
     margin:auto auto;
     transform-style: preserve-3d;
     transition: .5s linear;
@@ -151,6 +189,71 @@ ul {
     -webkit-transform : rotateY(0deg) scale(1.5); /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform     : rotateY(0deg) scale(1.5); /* IE 9 */
     transform         : rotateY(0deg) scale(1.5); /* Firefox 16+, IE 10+, Opera */
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: auto;
+}
+
+.made-width{
+    margin-top: 1em;
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 2em;
+    color: var(--light-light-blue);
+}
+
+
+/* ----- media queries -----------*/
+@media only screen and (max-width: 1328px){
+    .projblock {
+        flex: 0 0 48%;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    .projblock-back p {
+        font-size: 0.7em;
+    }
+    .projblock-content .desc {
+        font-size: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .projblock-back p {
+        font-size: 0.5em;
+    }
+    .projblock-content .desc {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .dynamicRight {
+        width: 100%;
+        background-color: var(--white);
+        overflow-y:hidden;
+    }
+    .projblock-side .link-img {
+        width: 10%;
+    }
+    .expblock{
+        margin-left: 0;
+        -webkit-animation: no-slide 1.5s forwards;
+        animation: no-slide 1.5s forwards;
+    }
+}
+
+@media only screen and (max-width: 463px){
+    .projblock {
+        flex: 0 0 100%;
+    }
+    .projblock-side .link-img {
+        width: 12%;
+    }
+    .projblock .projblock-flipped{
+        left: 21%;
+        width: 50%;
+    }
 }

@@ -15,9 +15,16 @@ class ExpBlock extends React.Component {
         )
     }
 
+    getAnimationDelay(delay){
+        return {
+            webkitAnimationDelay: delay+"s",
+            animationDelay:delay+"s"
+        }
+   }
+
     render() {
         return (
-            <div className="expblock">
+            <div className="expblock" style={this.getAnimationDelay(this.props.delay)}>
                 <div className="expblock-container">
                     <h3 className="experience">{this.props.title}</h3>
                     <a href={this.props.link} target="_blank"><p>{this.props.company}</p></a>

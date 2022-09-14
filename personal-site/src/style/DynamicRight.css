@@ -173,7 +173,7 @@ ul {
 .projblock .projblock-unflipped{
     opacity: 0;
     position: absolute;
-    z-index: -100;
+    z-index: 1;
     transform: rotateY(-180deg);
 }
 

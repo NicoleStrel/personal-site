@@ -68,7 +68,7 @@ class ProjBlock extends React.Component {
                     </div>
                     <div className="projblock-front">
                         <img src={require('../img/projects/'+this.props.img)} alt="can't show image"/>
-                        <div class="projblock-text">
+                        <div className="projblock-text">
                             <h3>{this.props.title}</h3>
                             <p>{this.props.date}</p>
                             <br></br>

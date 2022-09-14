@@ -15,15 +15,20 @@ class DynamicRight extends React.Component {
             dataExp: [],
             dataProj: [],
             flipped: {},
+            finishedflip: true,
         };
         this.flipCard = this.flipCard.bind(this);
         this.updateData = this.updateData.bind(this);
     }
 
     flipCard(e){
-        let flipped_dict = this.state.flipped
-        flipped_dict[e] = flipped_dict[e] ? !flipped_dict[e] : true;
-        this.setState({ flipped: flipped_dict});
+        if (this.state.finishedflip){
+            this.setState({ finishedflip: false});
+            let flipped_dict = this.state.flipped
+            flipped_dict[e] = flipped_dict[e] ? !flipped_dict[e] : true;
+            this.setState({ flipped: flipped_dict});
+            this.setState({ finishedflip: true});
+        }
     }
 
     updateData(input, type){

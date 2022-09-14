@@ -171,13 +171,15 @@ ul {
 }
 
 .projblock .projblock-unflipped{
-    opacity: 0 !important;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     z-index: -10000;
     transform: rotateY(-180deg);
 }
 
 .projblock .projblock-flipped{
+    visibility: visible;
     z-index: 130;
     opacity: 1;
     top: 30%;

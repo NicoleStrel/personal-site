@@ -20,7 +20,7 @@ class ExpBlock extends React.Component {
             webkitAnimationDelay: delay+"s",
             animationDelay:delay+"s"
         }
-   }
+    }
 
     render() {
         return (
@@ -28,6 +28,7 @@ class ExpBlock extends React.Component {
                 <div className="expblock-container">
                     <h3 className="experience">{this.props.title}</h3>
                     <a href={this.props.link} target="_blank"><p>{this.props.company}</p></a>
+                    <p>{this.props.location}</p>
                     <p>{this.props.dates}</p>
                     {this.processDesc(this.props.description)}
                 </div>

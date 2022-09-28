@@ -117,6 +117,9 @@ ul {
     background-color: var(--white);
     position: relative;
     padding: 1em;
+}
+
+.projblock-container{
     display: flex;
 }
 
@@ -205,6 +208,25 @@ ul {
     color: var(--light-light-blue);
 }
 
+.close-div{
+    margin-bottom: 1.5em;
+}
+
+.close-bttn{
+    float: right;
+}
+
+.close-bttn:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.proj-text-mobile{
+    display: none;
+}
+.proj-text-desktop{
+    display: block;
+}
 
 /* ----- media queries -----------*/
 @media only screen and (max-width: 1328px){
@@ -244,6 +266,12 @@ ul {
         margin-left: 0;
         -webkit-animation: no-slide 1.5s forwards;
         animation: no-slide 1.5s forwards;
+    }
+    .proj-text-mobile{
+        display: block;
+    }
+    .proj-text-desktop{
+        display: none;
     }
 }
 

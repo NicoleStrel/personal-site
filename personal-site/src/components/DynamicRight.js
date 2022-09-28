@@ -74,6 +74,7 @@ class DynamicRight extends React.Component {
                                     title={dataItem.title} 
                                     company={dataItem.company} 
                                     link={dataItem.link}  
+                                    location={dataItem.location}
                                     dates={dataItem.dates} 
                                     description={dataItem.description} 
                                     delay={i/2}></ExpBlock>

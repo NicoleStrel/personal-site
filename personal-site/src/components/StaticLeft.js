@@ -24,7 +24,7 @@ class StaticLeft extends React.Component {
                         <SocialLinks/>
                         <div className="school">
                             <a href="https://www.utoronto.ca/" target="_blank"><img className="uoft-logo" src={utoronto} alt="uoft-logo"></img></a>
-                            <p>Engineering Science, major in Machine Intelligence at the University of Toronto</p>
+                            <p>Engineering Science, major in Machine Intelligence, minor in Robotics at the University of Toronto</p>
                         </div>
                     </div>
                     <div className="skills">

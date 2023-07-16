@@ -41,7 +41,7 @@
 }
 
 .skills {
-    margin: 4em auto;
+    margin: 2em auto;
     display: flex;  
     justify-content: center;
     flex-wrap: wrap;
@@ -64,7 +64,7 @@
 }
 
 .social-links img {
-    width: 5%;
+    width: 6%;
     color: white;
     margin: 0 0.5em;
 }

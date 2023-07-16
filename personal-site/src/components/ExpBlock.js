@@ -8,7 +8,7 @@ class ExpBlock extends React.Component {
         const desc_return = []
 
         for(let i = 0; i < sections.length; i++){ 
-            if (i%2 == 0){
+            if (sections.length > 1 && i%2 == 0){
                 desc_return.push(<p>{sections[i]}</p>)
             }
             else{

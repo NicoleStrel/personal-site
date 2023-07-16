@@ -38,6 +38,7 @@ class ExpBlock extends React.Component {
         return (
             <div className="expblock" style={this.getAnimationDelay(this.props.delay)}>
                 <div className="expblock-container">
+                    <img src={require('../img/exp/'+this.props.img)} alt="can't show image"/>
                     <h3 className="experience">{this.props.title}</h3>
                     <a href={this.props.link} target="_blank"><p>{this.props.company}</p></a>
                     <p>{this.props.location}</p>

@@ -71,6 +71,7 @@ class DynamicRight extends React.Component {
                     {this.state.dataExp.map(function(dataItem, i){
                         return <ExpBlock 
                                     key={i} 
+                                    img = {dataItem.img}
                                     title={dataItem.title} 
                                     company={dataItem.company} 
                                     link={dataItem.link}  

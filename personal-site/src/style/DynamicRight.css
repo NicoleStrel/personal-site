@@ -32,7 +32,6 @@
 }
 
 .expblock{
-    border: 1px solid var(--dark-blue);
     border-radius: 1em;
     padding: 0.5em 1em;
     margin-bottom: 2em;
@@ -40,10 +39,21 @@
     margin-left: 60em;
     -webkit-animation: slide 1.5s forwards;
     animation: slide 1.5s forwards;
+    box-shadow: 0 0px 0px 0 var(--dark-blue), 0 2px 3px 0 var(--dark-blue);
 }
 
 .expblock-container{
     margin: 0.5em 0.1em;
+    position: relative;
+}
+
+.expblock-container img {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 10%;
+    max-width: 100%;
+    height: auto;
 }
 
 .expblock h3 {

@@ -8,7 +8,7 @@ import SocialLinks from './SocialLinks';
 
 class StaticLeft extends React.Component {
 
-    skills = ['Python', 'C', 'C++', 'Tensorflow', 'Pytorch', 'Javascript', 'Django', 'React', 'NodeJS', 'Docker', 'Perl', 'Java', 'Matlab', 'Kafka']
+    skills = ['Python', 'C', 'C++', 'Tensorflow', 'Pytorch', 'Javascript', 'Django', 'React', 'NodeJS', 'Docker', 'Perl', 'Java', 'Kafka']
 
     render() {
         return (

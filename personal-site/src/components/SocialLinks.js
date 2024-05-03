@@ -13,7 +13,7 @@ class SocialLinks extends React.Component {
             <div className="social-links">
                 <a href="https://www.linkedin.com/in/nicole-streltsov/" target="_blank"><img className="linkedin" src={linkedin} alt="linkedin-logo"></img></a>
                 <a href="https://github.com/NicoleStrel" target="_blank"><img className="github" src={github} alt="github-logo"></img></a>
-                <a href="mailto:nicole.streltsov@mail.utoronto.ca" target="_blank"><img className="envelope" src={envelope} alt="mail-logo"></img></a>
+                <a href="mailto:streltsovnicole@gmail.com" target="_blank"><img className="envelope" src={envelope} alt="mail-logo"></img></a>
                 <a href="https://devpost.com/NicoleStrel" target="_blank"><img className="devpost" src={devpost} alt="devpost-logo"></img></a>
             </div>
         )

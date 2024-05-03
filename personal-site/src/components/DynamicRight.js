@@ -103,7 +103,7 @@ class DynamicRight extends React.Component {
                             )}
                         </div>
                     </div>
-                    <p className="copyright"> © 2023 Copyright Nicole Streltsov</p>
+                    <p className="copyright"> © 2024 Copyright Nicole Streltsov</p>
                 </div>
             </div>
             

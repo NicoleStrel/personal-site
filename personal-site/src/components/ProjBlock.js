@@ -31,17 +31,17 @@ class ProjBlock extends React.Component {
     
     getLink(link, type) {
         if (link) {
-            if (type == "link"){
-                return (<a href={link} target="_blank"><img className="link-img" src={linkbind} alt="link-svg"></img><p>Link</p></a>)
+            if (type === "link"){
+                return (<a href={link} target="_blank" rel="noreferrer"><img className="link-img" src={linkbind} alt="Link"></img><p>Link</p></a>)
             }
-            else if(type == "github"){
-                return (<a href={link} target="_blank"><img className="link-img" src={octocat} alt="octocat-github-logo"></img><p>GitHub Repo</p></a>)
+            else if(type === "github"){
+                return (<a href={link} target="_blank" rel="noreferrer"><img className="link-img" src={octocat} alt="GitHub"></img><p>GitHub Repo</p></a>)
             }
-            else if(type == "devpost"){
-                return (<a href={link} target="_blank"><img className="link-img" src={devpost} alt="devpost-logo"></img><p>Devpost</p></a>)
+            else if(type === "devpost"){
+                return (<a href={link} target="_blank" rel="noreferrer"><img className="link-img" src={devpost} alt="Devpost"></img><p>Devpost</p></a>)
             }
-            else if(type == "youtube"){
-                return (<a href={link} target="_blank"><img className="link-img" src={youtube} alt="youtube-logo"></img><p>Youtube</p></a>)
+            else if(type === "youtube"){
+                return (<a href={link} target="_blank" rel="noreferrer"><img className="link-img" src={youtube} alt="YouTube"></img><p>Youtube</p></a>)
             }
         }
     }
@@ -72,7 +72,7 @@ class ProjBlock extends React.Component {
                                 <div className="close-div">
                                     <p className="close-bttn">X</p>
                                 </div>
-                                <img className="main-img" src={require('../img/projects/'+this.props.img)} alt="can't show image"/>
+                                <img className="main-img" src={require('../img/projects/'+this.props.img)} alt="can't show"/>
                                 {this.getLink(this.props.github, "github")}
                                 {this.getLink(this.props.link, "link")}
                                 {this.getLink(this.props.devpost, "devpost")}
@@ -82,7 +82,7 @@ class ProjBlock extends React.Component {
                         <div className="proj-text-mobile"> {this.getText(this.props.desc)}</div>
                     </div>
                     <div className="projblock-front">
-                        <img src={require('../img/projects/'+this.props.img)} alt="can't show image"/>
+                        <img src={require('../img/projects/'+this.props.img)} alt="can't show"/>
                         <div className="projblock-text">
                             <h3>{this.props.title}</h3>
                             <p>{this.props.date}</p>

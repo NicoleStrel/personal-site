@@ -8,7 +8,7 @@ import SocialLinks from './SocialLinks';
 
 class StaticLeft extends React.Component {
 
-    skills = ['Python', 'Java', 'C/C++', 'Pytorch', 'Tensorflow', 'Typescript', 'Javascript', 'Perl']
+    skills = ['Python', 'Java', 'C/C++', 'Typescript', 'Javascript', 'Go', 'Perl']
 
     render() {
         return (
@@ -24,7 +24,7 @@ class StaticLeft extends React.Component {
                         <p className="software-eng">Toronto, Ontario, Canada</p>
                         <SocialLinks/>
                         <div className="school">
-                            <a href="https://www.utoronto.ca/" target="_blank"><img className="uoft-logo" src={utoronto} alt="uoft-logo"></img></a>
+                            <a href="https://www.utoronto.ca/" target="_blank" rel="noreferrer"><img className="uoft-logo" src={utoronto} alt="uoft-logo"></img></a>
                             <p>Engineering Science, major in Machine Intelligence, minor in Robotics at the University of Toronto</p>
                         </div>
                     </div>

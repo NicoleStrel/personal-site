@@ -44,23 +44,23 @@ class DynamicRight extends React.Component {
                 data.push(dataItem)
             }
         } 
-        if (type.includes("experience")){
+        if (type === "experience"){
             this.setState({ dataExp: data});
         } else {
             this.setState({ dataProj: data});
         }
     }
 
-    parseCSV(expcsv, type){
-        Papa.parse(expcsv, {
+    parseCSV(csvUrl, type){
+        Papa.parse(csvUrl, {
             download: true,
-            complete: this.updateData,
+            complete: (results) => this.updateData(results, type),
         });
     }
     
     componentDidMount() {
-        this.parseCSV(expcsv, "exp");
-        this.parseCSV(projcsv, "proj");
+        this.parseCSV(expcsv, "experience");
+        this.parseCSV(projcsv, "projects");
     }
     
     render() {

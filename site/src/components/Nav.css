@@ -1,0 +1,114 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.site-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  flex-shrink: 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.site-nav__mark {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.site-nav__brand:hover {
+  color: var(--accent);
+}
+
+.site-nav__links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.site-nav__link {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-muted);
+  position: relative;
+}
+
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.site-nav__link:hover,
+.site-nav__link.is-active {
+  color: var(--ink);
+}
+
+.site-nav__link.is-active::after,
+.site-nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    height: auto;
+    min-height: var(--nav-height);
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0.45rem;
+    padding: 0.7rem 1rem 0.65rem;
+  }
+
+  .site-nav__brand {
+    font-size: 0.95rem;
+  }
+
+  .site-nav__links {
+    flex: 1 1 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .site-nav__link {
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+
+  .site-nav__mark {
+    width: 18px;
+    height: 18px;
+  }
+}

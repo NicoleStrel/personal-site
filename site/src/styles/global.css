@@ -1,0 +1,76 @@
+@import './tokens.css';
+
+.section {
+  padding: clamp(4rem, 10vh, 7rem) 1.5rem;
+}
+
+.section__inner {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+}
+
+.scan-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.scan-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: none;
+}
+
+.scan-link:hover {
+  color: var(--ink);
+}
+
+.scan-link:hover::after {
+  animation: link-scan 0.55s ease;
+}
+
+@keyframes link-scan {
+  0% {
+    top: 0;
+    opacity: 1;
+    transform: scaleX(0);
+  }
+  40% {
+    transform: scaleX(1);
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-link:hover::after {
+    animation: none;
+    opacity: 1;
+    transform: scaleX(1);
+    top: auto;
+    bottom: -2px;
+  }
+}
+
+.loading-screen {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}

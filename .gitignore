@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+.DS_Store
+*.local
+site/dist/
+site-2022/build/
+site/public/past/2022/
+.env
+.env.*

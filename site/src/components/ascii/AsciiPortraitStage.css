@@ -1,0 +1,162 @@
+.portrait-stage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-height) + 1.5rem) 1.5rem 2rem;
+  overflow: hidden;
+}
+
+.portrait-stage__burst {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.portrait-stage__burst[hidden] {
+  display: none;
+}
+
+.portrait-stage__inner {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(200px, 420px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  position: relative;
+  min-height: calc(100vh - var(--nav-height) - 3.5rem);
+}
+
+.portrait-stage__face {
+  width: fit-content;
+  max-width: min(420px, 44vw);
+  z-index: 2;
+  /* Avoid will-change during slide — it can shimmer pixel canvases. */
+  backface-visibility: hidden;
+}
+
+.portrait-stage__canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.portrait-stage__fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.portrait-stage__copy {
+  max-width: 36rem;
+  justify-self: start;
+  z-index: 1;
+  opacity: 0;
+}
+
+.portrait-stage__eyebrow {
+  margin: 0 0 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.portrait-stage__name {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.portrait-stage__tagline {
+  margin: 1.1rem 0 0;
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.portrait-stage__socials {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.portrait-stage__socials a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.portrait-stage__socials a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .portrait-stage {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 1rem);
+    overflow: hidden;
+  }
+
+  .portrait-stage__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    justify-items: center;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .portrait-stage__face {
+    max-width: min(300px, 78vw);
+    justify-self: center;
+  }
+
+  .portrait-stage__copy {
+    justify-self: center;
+    max-width: 100%;
+  }
+
+  .portrait-stage__name,
+  .portrait-stage__tagline {
+    white-space: normal;
+  }
+
+  .portrait-stage__tagline {
+    margin-inline: auto;
+  }
+
+  .portrait-stage__socials {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-stage__copy {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}

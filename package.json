@@ -1,0 +1,11 @@
+{
+  "name": "personal-site-monorepo",
+  "private": true,
+  "scripts": {
+    "sync:data": "./scripts/sync-shared-data.sh",
+    "dev": "npm run sync:data && npm run dev --prefix site",
+    "build": "npm run archive:build && npm run sync:data && npm run build --prefix site",
+    "archive:build": "npm run sync:data && CI=false npm run build --prefix site-2022 && rm -rf site/public/past/2022 && mkdir -p site/public/past/2022 && cp -R site-2022/build/* site/public/past/2022/",
+    "preview": "npm run preview --prefix site"
+  }
+}

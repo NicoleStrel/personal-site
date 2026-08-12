@@ -81,6 +81,37 @@ export function splitTech(tech: string): string[] {
     .filter(Boolean)
 }
 
+const MONTH_NAMES = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+] as const
+
+function formatMonthYear(value: string): string | null {
+  const match = /^(\d{4})-(\d{2})$/.exec(value)
+  if (!match) return null
+  const month = MONTH_NAMES[Number(match[2]) - 1]
+  if (!month) return null
+  return `${month} ${match[1]}`
+}
+
+export function formatIndieDates(started: string, ended: string): string | null {
+  const start = formatMonthYear(started)
+  if (!start) return null
+  const end = ended ? formatMonthYear(ended) : 'Present'
+  if (!end) return null
+  return `${start} - ${end}`
+}
+
 export function splitImgs(img: string): string[] {
   if (!img) return []
   return img

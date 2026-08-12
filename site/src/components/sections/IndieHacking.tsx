@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { IndieRow } from '../../data/types'
-import { splitBullets, splitImgs, splitTech } from '../../data/loadCsv'
+import { formatIndieDates, splitBullets, splitImgs, splitTech } from '../../data/loadCsv'
 import { AsciiHeading } from '../ascii/AsciiHeading'
 import { prefersReducedMotion } from '../../lib/dither'
 import './IndieHacking.css'
@@ -106,6 +106,7 @@ export function IndieHacking({ items }: Props) {
 
   const bullets = splitBullets(current.description)
   const tech = splitTech(current.tech)
+  const dates = formatIndieDates(current.started, current.ended)
 
   return (
     <section className="section indie" id="indie">
@@ -168,6 +169,7 @@ export function IndieHacking({ items }: Props) {
             <span className={`indie__status indie__status--${current.status}`}>
               {current.status}
             </span>
+            {dates ? <span className="indie__dates">{dates}</span> : null}
             {current.highlight ? (
               <span className="indie__highlight">{current.highlight}</span>
             ) : null}
